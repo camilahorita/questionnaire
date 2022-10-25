@@ -23,3 +23,9 @@
 .radioOption input {
     display: block;
 }
+
+#btnquest {
+    width: 140px;
+    margin: 40px;
+    align-self: flex-end;
+}
