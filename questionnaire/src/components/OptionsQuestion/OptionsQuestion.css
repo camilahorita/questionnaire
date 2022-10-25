@@ -1,0 +1,20 @@
+.option {
+    width:400px;
+    height: 60px;
+
+    border:1px solid rgb(183, 182, 182);
+    margin: 5px auto;
+
+    border-radius: 30px;
+    text-align: center;
+    
+}
+.checkbox {
+    opacity: 0;
+}
+
+.checkbox:checked + .option {
+    background-color: rgb(231, 229, 229);
+  }
+
+  

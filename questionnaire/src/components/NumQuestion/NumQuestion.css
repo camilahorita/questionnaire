@@ -1,0 +1,25 @@
+.numQuest {
+    width: 100%;
+    height: 100vh;
+
+    margin: 10px auto;
+
+    display: flex;
+    align-items:center;
+    flex-direction: column;
+    justify-content:center;
+}
+.numQuest p {
+    font-size: 28px;
+}
+.radioOption {
+    display: inline;
+    margin-right: 20px;
+}
+.radioOption label {
+    font-size: 20px
+}
+
+.radioOption input {
+    display: block;
+}
