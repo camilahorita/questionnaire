@@ -1,24 +1,35 @@
 import React, { useState } from 'react';
 import "./Login.css";
-import PropTypes from 'prop-types';
 import axios from "axios";
 
 
-async function loginUser(credentials) {
-  return fetch('http://localhost:8080/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
- }
-
 function Login({setToken}) {
 
-  const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
+  let [username, setUserName] = useState();
+  let [password, setPassword] = useState();
+
+  function loginUser() {
+    axios
+  
+    .post("http://localhost:9090/api/login/login", {"username": username, "password": password})
+  
+    .then(function (response) {
+  
+  
+      let resp = response;
+      setToken(resp);
+      console.log(resp);
+  
+    })
+  
+    .catch(function (error) {
+  
+      // handle error
+  
+      console.log(error);
+  
+    })
+  }
 
     return (
       <div className="signinbox">
@@ -32,14 +43,12 @@ function Login({setToken}) {
                 <label htmlFor ="password">Password</label>
                 <input className="form-control" type="password" id="password" name="password"  placeholder="Password" onChange={e => setPassword(e.target.value)} required />
             </div>
-                <input type="submit" value="Sign In" className="btn btn-primary"/>
+                <input type="button" value="Sign In" className="btn btn-primary" onClick={() => loginUser()}/>
         </form>
       </div>
     );
   }
   export default Login;
 
-  Login.propTypes = {
-    setToken: PropTypes.func.isRequired
-  }
+
   

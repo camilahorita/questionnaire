@@ -1,9 +1,10 @@
 import NumQuestion from "../NumQuestion/NumQuestion";
 
 function ShowQuestionnaire(){
-    return (
-        <NumQuestion></NumQuestion>
-    )
 
+    
+    return (
+        <NumQuestion/>
+    )
 }
 export default ShowQuestionnaire;

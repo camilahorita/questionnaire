@@ -14,11 +14,7 @@ function App() {
   }
   return (
     <div className="App">
-      <BrowserRouter>
-          <Route path="/questionnaire">
-            <ShowQuestionnaire />
-          </Route>
-      </BrowserRouter>
+      <ShowQuestionnaire /> 
     </div>
   );
 }

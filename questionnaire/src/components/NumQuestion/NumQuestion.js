@@ -1,6 +1,27 @@
+import axios from "axios";
 import "./NumQuestion.css";
 
 function NumQuestion(){
+
+    function getQuestion() {
+        axios
+      
+        .get("http://localhost:9090/api/boolq", { withCredentials: true })
+      
+        .then(function (response) {
+      
+          let resp = response;
+          console.log(resp);
+      
+        })
+        .catch(function (error) {
+    
+      
+          console.log(error);
+      
+        })
+      }
+      getQuestion();
     return (
         <div className="numQuest">
             <p>What do you know about ..... ?</p>
